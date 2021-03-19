@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_tuto/flavor.dart';
 
 class AuthenticationPage extends StatefulWidget {
   @override
@@ -14,7 +16,11 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
 
   @override
   Widget build(BuildContext context) {
+    final _flavor = Provider.of<Flavor>(context);
     return Scaffold(
+      appBar: AppBar(
+        title: Text(_flavor.toString()),
+      ),
       body: Container(
         child: Center(
           child: Text('Counter: $_count'),
